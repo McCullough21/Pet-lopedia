@@ -6,9 +6,9 @@
     <%= f.label :password %><br>
     <%= f.password_field :password %>
     <br>
-    <%= f.label "Qualification" %><br>
+    <%= f.label "Do you have experience as:" %><br>
     <br>
-    <%= f.collection_check_boxes :qualification_ids, Qualification.all, :id, :profession %>
+    <%= f.select :qualification, [ 'Veterinarian', 'Vet-Tech', 'ASPCA', 'Breeder'], :prompt => 'Select' %>
     <br>
     <br>
     <%= f.submit "Create" %>
