@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def new
-
+        @user = User.new
     end
 
     def login
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password, :qualification)
+        params.require(:user).permit(:username, :password, :qualification.id)
+    end
 
 end

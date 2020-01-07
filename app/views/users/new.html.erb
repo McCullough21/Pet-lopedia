@@ -1,0 +1,14 @@
+<%= form_for @user  do |f| %>
+    
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label "Qualification" %><br>
+    <%= f.check_box :user.qualification, Qualification.all, :id, :profession %>
+    <%= f.submit "Log In" %>
+  
+<% end %>
+<br>
