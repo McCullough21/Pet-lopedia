@@ -1,11 +1,12 @@
 class DogsController < ApplicationController
 
     def index
-
+        # user id nested
+    
     end
     
     def show
-
+        # user id nested
     end
 
     def new

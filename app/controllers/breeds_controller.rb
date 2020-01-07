@@ -3,7 +3,7 @@ class BreedsController < ApplicationController
     def index
 
     end
-    
+
     def show
 
     end
@@ -25,7 +25,7 @@ class BreedsController < ApplicationController
     end
 
     def destroy
-
+        
     end
 
 end
