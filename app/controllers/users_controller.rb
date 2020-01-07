@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    def index
+    def home
 
     end
     
@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
 
     def new
+
+    end
+
+    def login
 
     end
 
