@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     end
 
     def login
+        
 
     end
 
@@ -31,5 +32,10 @@ class UsersController < ApplicationController
     def destroy
 
     end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:username, :password, :qualification)
 
 end
