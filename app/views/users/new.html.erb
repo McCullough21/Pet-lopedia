@@ -7,8 +7,9 @@
     <%= f.password_field :password %>
     <br>
     <%= f.label "Qualification" %><br>
-    <%= f.check_box :user.qualification, Qualification.all, :id, :profession %>
-    <%= f.submit "Log In" %>
-  
+    <br>
+    <%= f.collection_check_boxes :qualification_ids, Qualification.all, :id, :profession %>
+    <br>
+    <br>
+    <%= f.submit "Create" %>
 <% end %>
-<br>
