@@ -1,0 +1,16 @@
+<h1> Welcome to Pet-lopedia </h1>
+
+<%= form_for :user, url: login_path  do |f| %>
+    
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.submit "Log In" %>
+    
+  <% end %>
+<br>
+<br>
+  <%=link_to 'Sign up', signup_path%>
