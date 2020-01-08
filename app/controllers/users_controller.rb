@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-
+    before_action :require_login
+    skip_before_action :require_login, only: [:home, :new]
     def home
-
+        
     end
     
     def show
@@ -39,6 +40,10 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:username, :password, :qualification)
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 
 end
