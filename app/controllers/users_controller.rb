@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-    # before_action :require_login
-    # skip_before_action :require_login, only: [:home, :new, :create]
+    before_action :require_login
+    skip_before_action :require_login, only: [:home, :new]
+
     def home
         
     end
@@ -40,6 +41,11 @@ class UsersController < ApplicationController
 
     end
 
+    def logout
+        session.destroy
+        redirect_to '/'
+    end
+
     def destroy
 
     end
@@ -50,11 +56,11 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password, :qualification)
     end
 
-    # def require_login
-    #     unless logged_in?
-    #       flash[:error] = "You must be logged in to access this section"
+    def require_login
+        unless logged_in?
+          flash[:error] = "You must be logged in to access this section"
           
-    #     end
-    #   end
+        end
+      end
 
 end
