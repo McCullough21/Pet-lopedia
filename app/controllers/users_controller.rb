@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:home, :new]
+    skip_before_action :require_login, only: [:home, :new, :login]
 
     def home
         
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     def login
         
         @user = User.find_by(:username => params[:user][:username])
+        
         if @user && @user.authenticate(params[:user][:password])
             session[:id] = @user.id
             redirect_to user_path(@user.id)

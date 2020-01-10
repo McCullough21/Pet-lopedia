@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
     private
     def current_user
-        @user ||= User.find_by(id: session[:user_id])
+        @user ||= User.find_by(id: session[:id])
     end
 
     def logged_in?
