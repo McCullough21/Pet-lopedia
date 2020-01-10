@@ -1,0 +1,20 @@
+user show page has username, qualification, list of pets
+
+dogs should have nested resource with breed and user.  user/:id/dog/index?
+
+breed should index all breeds, show view has all dog instances of that breed 
+    link to owner page
+
+QUALIFIED scope? should filter user index for all qualified users.
+
+maybe throw in a rating of the quality of a user's pet description in terms of helpfulness.
+
+
+User home/login
+  breed index - with options to select breed, go to profile page.
+   within profile, create a new pet/dog.
+    
+
+logout from any view
+
+    
