@@ -11,5 +11,22 @@
     <%= f.select :qualification, [ 'Veterinarian', 'Vet-Tech', 'ASPCA', 'Breeder'], :prompt => 'Select' %>
     <br>
     <br>
+    <br>
+    <h2> If you would like to add your dog: </h2>
+
+
+        <%= f.fields_for :dogs do |d| %>
+            <%=d.label :name %>
+            <%=d.text_field :name %>
+            <br>
+            <%=d.label :age %>
+            <%=d.number_field :age %>
+            <br>
+            <%=d.label :description%>
+            <%=d.text_area :description%>
+            <br>
+            <%=d.label "Please select a breed"%>
+            <%=d.collection_check_boxes :breed, Breed.all, :id, :name %>
+           <% end %> 
     <%= f.submit "Create" %>
 <% end %>
