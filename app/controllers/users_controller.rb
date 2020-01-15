@@ -42,11 +42,12 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @user = User.find(session[:id])
 
     end
 
     def update
-
+       
     end
 
     def logout
