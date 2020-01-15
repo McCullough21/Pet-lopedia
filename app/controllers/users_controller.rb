@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     end
 
     def update
+        
+        @user = User.find_by(id: params[:id])
+        @user.update(user_params)
+        redirect_to user_path(@user)
        
     end
 
@@ -65,10 +69,6 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password, :qualification, 
         dogs_attributes: [:name, :age, :description, :breed_id])
     end
-
-    # def breed
-    #     params[:breed_id].select{|n| n != nil}.to_i
-    # end
 
     def require_login
         unless logged_in?
