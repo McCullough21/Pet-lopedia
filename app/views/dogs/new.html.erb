@@ -1,0 +1,16 @@
+<%= form_for @dog do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br>
+    <%=f.label :age %>
+    <%=f.number_field :age %>
+    <br>
+    <%=f.label :description%>
+    <%=f.text_area :description%>
+    <br>
+    <%=f.label "Please select a breed"%>
+    <%=f.collection_select :breed_id, Breed.all, :id, :name, prompt: true%>
+     
+    <%= f.submit "Create" %>
+
+<% end %>

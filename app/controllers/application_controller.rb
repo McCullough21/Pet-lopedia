@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end
-    # def require_login
-#     return head(:forbidden) unless session.include? :user_id
-# end
+    def require_login
+        unless logged_in?
+          redirect_to '/', alert: "You must log in or sign up"
+        end
+    end
 
 end

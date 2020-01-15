@@ -70,10 +70,6 @@ class UsersController < ApplicationController
         dogs_attributes: [:name, :age, :description, :breed_id])
     end
 
-    def require_login
-        unless logged_in?
-          redirect_to '/', alert: "You must log in or sign up"
-        end
-      end
+    
 
 end

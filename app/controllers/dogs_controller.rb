@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+    before_action :require_login
 
     def index
         # user id nested
@@ -10,10 +11,11 @@ class DogsController < ApplicationController
     end
 
     def new
-
+        @dog = Dog.new
     end
 
     def create
+        raise params.inspect
 
     end
 
@@ -29,4 +31,9 @@ class DogsController < ApplicationController
 
     end
 
+    private
+
+    def dog_params
+        params.require
+    end
 end
