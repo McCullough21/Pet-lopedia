@@ -1,6 +1,6 @@
 user show page has username, qualification, list of pets
 
-CREATE USER, nested new route for a dog
+CREATE USER, nested new route for a dog |X|
 
 dogs should have nested resource with breed and user.  user/:id/dog/index?
 

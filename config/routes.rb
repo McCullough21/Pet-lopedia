@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :dogs
   
-  # resources :users, only: [:show] do
-  #     resources :dogs, only: [:index, :show]
-  # end
+  resources :breeds, only: [:show] do
+      resources :dogs, only: [:index, :show]
+  end
 
   resources :users, only: [:show, :create, :update, :destroy]
 
