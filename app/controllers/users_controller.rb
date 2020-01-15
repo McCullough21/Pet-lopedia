@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    # before_action :require_login
-    # skip_before_action :require_login, only: [:home, :new, :create, :login]
+    before_action :require_login
+    skip_before_action :require_login, only: [:home, :new, :create, :login]
 
     def home
         
