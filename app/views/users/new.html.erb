@@ -26,7 +26,7 @@
             <%=d.text_area :description%>
             <br>
             <%=d.label "Please select a breed"%>
-            <%=d.collection_check_boxes :breed, Breed.all, :id, :name %>
+            <%=d.collection_select :breed_id, Breed.all, :id, :name, prompt: true%>
            <% end %> 
     <%= f.submit "Create" %>
 <% end %>

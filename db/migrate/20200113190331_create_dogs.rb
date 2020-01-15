@@ -6,7 +6,6 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.string :description
       t.integer :user_id
       t.integer :breed_id
-      t.timestamps
     end
   end
 end

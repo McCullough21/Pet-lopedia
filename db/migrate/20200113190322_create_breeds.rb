@@ -5,7 +5,6 @@ class CreateBreeds < ActiveRecord::Migration[6.0]
       t.string :height
       t.string :weight
       t.string :description
-      t.timestamps
     end
   end
 end
