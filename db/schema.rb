@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2020_01_13_190331) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "name"
-    t.string "height"
-    t.string "weight"
+    t.string "female_height"
+    t.string "male_height"
+    t.string "female_weight"
+    t.string "male_weight"
     t.string "description"
   end
 
