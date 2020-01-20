@@ -26,7 +26,7 @@ class DogsController < ApplicationController
         
         if @dog.save
         
-        redirect_to dog_path(@dog)
+        redirect_to user_path(@dog.user)
         else
         redirect_to new_dog_path
         end
@@ -34,10 +34,14 @@ class DogsController < ApplicationController
     end
 
     def edit
+        @dog = Dog.find_by(id: params[:id])
 
     end
 
     def update
+        @dog = Dog.find_by(id: params[:id])
+        @dog.update(dog_params)
+        redirect_to user_path(@dog.user)
 
     end
 
