@@ -1,0 +1,17 @@
+<%= form_for @breed do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br>
+    <%=f.label :height %>
+    <%=f.number_field :height %>
+    <br>
+    <%=f.label :weight %>
+    <%=f.number_field :weight %>
+    <br>
+    <%=f.label :description%>
+    <%=f.text_area :description%>
+    
+     
+    <%= f.submit "Create" %>
+
+<% end %>

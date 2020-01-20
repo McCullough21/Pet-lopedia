@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :dogs
   
-  resources :breeds, only: [:show] do
+  resources :breeds do
       resources :dogs, only: [:index, :show]
   end
   resources :users, only: [:new] do
