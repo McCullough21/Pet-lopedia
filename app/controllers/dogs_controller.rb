@@ -11,11 +11,14 @@ class DogsController < ApplicationController
     end
 
     def new
+       
         @dog = Dog.new
     end
 
     def create
         raise params.inspect
+
+        @dog.user_id = current_user.id
 
     end
 
@@ -34,6 +37,6 @@ class DogsController < ApplicationController
     private
 
     def dog_params
-        params.require
+        params.require(:dog).permit(:name, :age, :description, :breed_id)
     end
 end
