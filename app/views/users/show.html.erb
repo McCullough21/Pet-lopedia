@@ -20,10 +20,12 @@
     <p>Breed:
     <%= dog.breed.name %></p>
     </li>
-<%=link_to "Edit", edit_dog_path(dog)%>
-
+<p><%=link_to "Edit", edit_dog_path(dog)%></p>
+<br>
+<br>
 <% end %>
+</ul>
 <br>
-<br>
+
 
 <%= link_to 'Logout', logout_path%>

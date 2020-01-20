@@ -2,7 +2,7 @@ class DogsController < ApplicationController
     before_action :require_login
 
     def index
-        # user id nested
+        # breed id nested
     
     end
     
