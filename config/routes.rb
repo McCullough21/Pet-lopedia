@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :breeds, only: [:show] do
       resources :dogs, only: [:index, :show]
   end
-
+  resources :users, only: [:new] do
+    resources :dogs, only: [:new, :create]
+  end
+  
   resources :users, only: [:show, :create, :edit, :update, :destroy]
 
   resources :breeds
