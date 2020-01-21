@@ -8,7 +8,7 @@
 
 <h2><%= @user.username%>'s Dogs: </h2>
 <br>
-<%= link_to "Add New Dog", new_dog_path%>
+<%= link_to "Add New Dog", new_user_dog_path(@user)%>
 <ul>
 <%@user.dogs.each do |dog|%>
     

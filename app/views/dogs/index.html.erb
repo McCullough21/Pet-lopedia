@@ -1,3 +1,5 @@
+<%= link_to "My Profile", user_path(session[:id])%>
+
 <%@dogs.each do |dog|%>
     
     <li>Name:  <%= dog.name %>

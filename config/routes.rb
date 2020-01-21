@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   
   root 'users#home'
 
-  resources :dogs, only: [:show]
+  resources :dogs, only: [:show, :edit, :update, :destroy]
   
   resources :breeds, only: [:index] do
       resources :dogs, only: [:index, :show]
   end
   resources :users, only: [:new] do
-    resources :dogs, only: [:new, :create, :edit, :update, :destroy]
+    resources :dogs, only: [:new, :create]
   end
 
   resources :users, only: [:show, :create, :edit, :update, :destroy]
