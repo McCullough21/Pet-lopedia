@@ -1,6 +1,6 @@
 <%@breeds.each do |breed|%>
     
-   <h2> <%=breed.name%></h2>
+   <h2> <%=link_to breed.name, breed_path(breed)%></h2>
     
     <h4>Height:</h4>
         <p> Female: <%= breed.female_height_min %> - <%= breed.female_height_max %> inches</p>

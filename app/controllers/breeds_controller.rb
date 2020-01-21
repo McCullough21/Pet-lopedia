@@ -16,7 +16,7 @@ class BreedsController < ApplicationController
         @breed = Breed.new(breed_params)
 
         if @breed.save
-            redirect_to breeds_path
+            redirect_to breed_path(@breed)
         else
             redirect_to new_breed_path
         end
@@ -24,11 +24,14 @@ class BreedsController < ApplicationController
     end
 
     def edit
+        @breed = Breed.find_by(id: params[:id])
 
     end
 
     def update
-
+        @breed = Breed.find_by(id: params[:id])
+        @breed.update(breed_params)
+        redirect_to breed_path(@breed)
     end
 
     def destroy
