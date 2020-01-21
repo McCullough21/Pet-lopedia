@@ -2,13 +2,5 @@
     
    <h2> <%=link_to breed.name, breed_path(breed)%></h2>
     
-    <h4>Height:</h4>
-        <p> Female: <%= breed.female_height_min %> - <%= breed.female_height_max %> inches</p>
-        <p> Male: <%= breed.male_height_min %> - <%= breed.male_height_max %> inches </p>
-    <h4> Weight:</h4>
-    <p> Female: <%= breed.female_weight_min %> - <%= breed.female_weight_max %> lbs</p>
-    <p>Male: <%= breed.male_weight_min %> - <%= breed.male_weight_max %>lbs</p>
-    <h4> Breed Description: </h4>
-    <%= breed.description%>
-    <br>
+    
 <% end %>

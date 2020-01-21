@@ -2,8 +2,13 @@ class DogsController < ApplicationController
     before_action :require_login
 
     def index
-        # breed id nested
-    
+        
+        if params[:breed_id]
+            breed = Breed.find_by(id: params[:breed_id])
+            @dogs = breed.dogs
+        else
+            @dogs = Dogs.all
+        end
     end
     
     def show

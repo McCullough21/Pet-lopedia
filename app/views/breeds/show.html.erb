@@ -8,5 +8,8 @@
     <p>Male: <%= @breed.male_weight_min %> - <%= @breed.male_weight_max %>lbs</p>
     <h4> Breed Description: </h4>
     <%= @breed.description%>
+    <br>
 
+    <%=link_to "See all #{@breed.name}'s ", breed_dogs_path(@breed)%>
+    <br>
     <%=link_to "Edit", edit_breed_path(@breed)%>
