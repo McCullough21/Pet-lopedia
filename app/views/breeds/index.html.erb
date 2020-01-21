@@ -1,3 +1,31 @@
 <%@breeds.each do |breed|%>
-    <%=breed.name%>
+    
+   <h2> <%=breed.name%></h2>
+    <br>
+    <%= breed.female_height_min %>
+    <br>
+
+    <%= breed.female_height_max %>
+    <br>
+
+    <%= breed.female_weight_min %>
+    <br>
+
+    <%= breed.female_weight_max %>
+    <br>
+
+    <%= breed.male_height_min %>
+    <br>
+
+    <%= breed.male_height_max %>
+    <br>
+
+    <%= breed.male_weight_min %>
+    <br>
+
+    <%= breed.male_weight_max %>
+    <br>
+
+    <%= breed.description%>
+    <br>
 <% end %>
