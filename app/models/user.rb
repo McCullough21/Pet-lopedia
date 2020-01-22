@@ -10,7 +10,6 @@ class User < ApplicationRecord
     def dogs_attributes=(dogs_attributes)
 
         dogs_attributes.each do |i, dog_attributes|
-           
         self.dogs.build(dog_attributes)
         end
     end

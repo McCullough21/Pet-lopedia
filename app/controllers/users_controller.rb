@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         session[:id] = @user.id
         redirect_to user_path(@user)
         else 
-            redirect_to '/'
+            render :new
         end
     end
 

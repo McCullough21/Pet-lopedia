@@ -16,9 +16,10 @@ class DogsController < ApplicationController
     end
 
     def new
-        if params[:id]
-            @user = User.find_by(id: params[:id])
+        if params[:user_id]
+            @user = User.find_by(id: params[:user_id])
             @dog = @user.dogs.build
+            
         else
             render '/login'
         end 
