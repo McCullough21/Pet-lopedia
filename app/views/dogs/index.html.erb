@@ -3,7 +3,9 @@
 <br>
 
 <%@dogs.each do |dog|%>
-    
+
+    <h3>Owner: <%=dog.user.username%></h3>
+    <h4>Qualification: <%=dog.user.qualification%></h4>
     <li>Name:  <%= dog.name %>
     <p>Age:
      <%= dog.age %></p>
