@@ -3,14 +3,18 @@ class DogsController < ApplicationController
 
     def index
         if params[:breed_id]
-            breed = Breed.find_by(id: params[:breed_id])
-            dog_set = breed.dogs
-            @dogs = show_qualified(dog_set)
-           
-
+            @breed = Breed.find_by(id: params[:breed_id])
+            @dogs = @breed.dogs
         else
             @dogs = Dogs.all
         end
+    end
+
+    def qual_index
+        
+            breed = Breed.find_by(id: params[:breed_id])
+            dog_set = breed.dogs
+            @dogs = show_qualified(dog_set)
     end
     
     def show

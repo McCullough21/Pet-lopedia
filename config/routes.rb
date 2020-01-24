@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :breeds
 
-  
+  get 'breeds/:breed_id/qual_index' => "dogs#qual_index", as: :qual_index
   post 'login' => "users#login"
   get 'signup' => "users#new"
   get 'edit_profile' => "users#edit"
