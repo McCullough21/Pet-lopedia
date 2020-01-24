@@ -2,10 +2,12 @@ class DogsController < ApplicationController
     before_action :require_login
 
     def index
-        
         if params[:breed_id]
             breed = Breed.find_by(id: params[:breed_id])
-            @dogs = breed.dogs
+            dog_set = breed.dogs
+            @dogs = show_qualified(dog_set)
+           
+
         else
             @dogs = Dogs.all
         end
@@ -60,4 +62,14 @@ class DogsController < ApplicationController
     def dog_params
         params.require(:dog).permit(:name, :age, :description, :breed_id)
     end
+
+    def show_qualified(dogs)
+        
+        dogs.reject do |dog|
+        
+          User.unqualified.include?(dog.user)
+        
+        end
+         
+     end
 end

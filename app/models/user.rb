@@ -7,6 +7,10 @@ class User < ApplicationRecord
     accepts_nested_attributes_for :dogs, reject_if: proc{|attributes| attributes['name'].blank?}
 
     
+    
+
+    
+    
     # def dogs_attributes=(dogs_attributes)
 
     #     dogs_attributes.each do |i, dog_attributes|
