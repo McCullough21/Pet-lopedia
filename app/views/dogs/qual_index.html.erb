@@ -1,6 +1,6 @@
 <h4><%= link_to "My Profile", user_path(session[:id])%></h4> 
 <h4><%= link_to "See all breeds", breeds_path%></h4>
-
+<h4><%= link_to "Back to dogs from all owners", breed_dogs_path%></h4>
 <br>
 
 <%@dogs.each do |dog|%>
