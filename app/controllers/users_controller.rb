@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:home, :new, :create, :login]
+    skip_before_action :require_login, only: [:home, :new, :show, :create, :login]
 
     def home
         
@@ -18,14 +18,18 @@ class UsersController < ApplicationController
 
     def login
         
-        @user = User.find_by(:username => params[:user][:username])
         
-        if @user && @user.authenticate(params[:user][:password])
-            session[:id] = @user.id
-            redirect_to user_path(@user.id)
-        else
-            redirect_to '/'
-        end
+        
+            @user = User.find_by(:username => params[:user][:username])
+        
+            if 
+                @user && @user.authenticate(params[:user][:password])
+                session[:id] = @user.id
+                redirect_to user_path(@user)
+            else
+                redirect_to '/'
+            end
+        
         
     end
 
@@ -70,6 +74,7 @@ class UsersController < ApplicationController
         dogs_attributes: [:name, :age, :description, :breed_id])
     end
 
+    
     
 
 end

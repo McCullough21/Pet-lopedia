@@ -1,15 +1,29 @@
 class SessionsController < ApplicationController
 
     def create
-        @user = User.find_or_create_by(uid: auth['uid']) do |u|
-          u.name = auth['info']['name']
-          u.email = auth['info']['email']
-          u.image = auth['info']['image']
+        
+     
+       if
+         @user = User.find_by(email: auth['info']['email']) do |u|
+           
+          
+          session[:id] = @user.id
+          redirect_to user_path(@user)
+          
+          
+         end
+        else 
+         @user = User.new(uid: auth['uid'], password: SecureRandom.hex, email: auth['info']['email'])
+          
+            if @user.save
+                
+            session[:id] = @user.id
+            redirect_to user_path(@user)
+            
+            
+            end
         end
-     
-        session[:user_id] = @user.id
-     
-        render 'welcome/home'
+       
       end
      
       private
@@ -17,5 +31,5 @@ class SessionsController < ApplicationController
       def auth
         request.env['omniauth.auth']
       end
-    end
+    
 end
