@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    def create
+    def new
         
      
        if
@@ -17,16 +17,17 @@ class SessionsController < ApplicationController
           
             if @user.save
                 
-            session[:id] = @user.id
-            redirect_to user_path(@user)
-            
-            
+            session[:id] = @user.id 
             end
         end
        
       end
+
+      
      
       private
+
+      
      
       def auth
         request.env['omniauth.auth']

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'edit_profile' => "users#edit"
   get 'logout' => 'users#logout'
 
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#new'
+  post 'session/create' => 'sessions#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

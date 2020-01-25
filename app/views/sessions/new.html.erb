@@ -1,10 +1,9 @@
+
+
 <%= form_for @user  do |f| %>
-    
+    <h3> Please create a Username </h3>
     <%= f.label :username %><br>
     <%= f.text_field :username %>
-    <br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
     <br>
     <%= f.label :email%>
     <%= f.email_field :email%>
@@ -17,6 +16,3 @@
     <%= f.submit "Update" %>
 
 <% end %>
-
-
-<%= link_to 'Logout', logout_path%>
