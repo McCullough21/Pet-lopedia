@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
         
      
        if
-         @user = User.find_by(email: auth['info']['email']) do |u|
+         @user = User.find_by(email: auth['info']['email']) 
            
           
           session[:id] = @user.id
           redirect_to user_path(@user)
           
           
-         end
+         
         else 
          @user = User.new(uid: auth['uid'], password: SecureRandom.hex, email: auth['info']['email'])
           
