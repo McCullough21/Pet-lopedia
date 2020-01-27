@@ -11,10 +11,9 @@ class DogsController < ApplicationController
     end
 
     def qual_index
-        
-            breed = Breed.find_by(id: params[:breed_id])
-            dog_set = breed.dogs
-            @dogs = show_qualified(dog_set)
+        breed = Breed.find_by(id: params[:breed_id])
+        dog_set = breed.dogs
+        @dogs = show_qualified(dog_set)
     end
     
     
@@ -22,37 +21,29 @@ class DogsController < ApplicationController
     def new
         if params[:user_id]
             @user = User.find_by(id: params[:user_id])
-            @dog = @user.dogs.build
-            
+            @dog = @user.dogs.build 
         else
             render '/login'
         end 
     end
 
     def create
-        
         @dog = @user.dogs.build(dog_params)
-        
-        
         if @dog.save
-        
-        redirect_to user_path(@dog.user)
+           redirect_to user_path(@dog.user)
         else
-        redirect_to new_dog_path
+           redirect_to new_dog_path
         end
-
     end
 
     def edit
         @dog = Dog.find_by(id: params[:id])
-
     end
 
     def update
         @dog = Dog.find_by(id: params[:id])
         @dog.update(dog_params)
         redirect_to user_path(@dog.user)
-
     end
 
     def destroy
@@ -66,8 +57,8 @@ class DogsController < ApplicationController
     end
 
     def show_qualified(dogs)
-      dogs.reject do |dog|
-        User.unqualified.include?(dog.user) 
-      end   
+        dogs.reject do |dog|
+          User.unqualified.include?(dog.user) 
+        end   
     end
 end

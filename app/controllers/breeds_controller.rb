@@ -42,8 +42,8 @@ class BreedsController < ApplicationController
 private
 
   def breed_params
-    params.require(:breed).permit(:name, :female_height_min, :female_height_max, :male_height_min, :male_height_max,
-    :female_weight_min, :female_weight_max, :male_weight_min, :male_weight_max, :description)
+      params.require(:breed).permit(:name, :female_height_min, :female_height_max, :male_height_min, :male_height_max,
+      :female_weight_min, :female_weight_max, :male_weight_min, :male_weight_max, :description)
   end
 
 end
