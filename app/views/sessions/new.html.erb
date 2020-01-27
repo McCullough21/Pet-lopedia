@@ -1,18 +1,2 @@
+<%= render 'form', :locals => @user%>
 
-
-<%= form_for @user  do |f| %>
-    <h3> Please create a Username </h3>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-    <br>
-    <%= f.label :email%>
-    <%= f.email_field :email%>
-    <br>
-    <%= f.label "Do you have experience as:" %><br>
-    <br>
-    <%= f.select :qualification, [ 'Veterinarian', 'Vet-Tech', 'ASPCA', 'Breeder'], :prompt => 'Select' %>
-    <br>
-    <br>
-    <%= f.submit "Update" %>
-
-<% end %>
