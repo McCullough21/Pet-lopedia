@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :breeds, through: :dogs
     has_secure_password
     validates :username, uniqueness: true
+    validates :username, presence: true
     scope :unqualified, -> {where qualification: ""}
     accepts_nested_attributes_for :dogs, reject_if: proc{|attributes| attributes['name'].blank?}
 

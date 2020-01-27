@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
           
          
         else 
-         @user = User.new(uid: auth['uid'], password: SecureRandom.hex, email: auth['info']['email'])
-          
+         @user = User.new(uid: auth['uid'], username: auth['info']['email'].split(/\@/).first, password: SecureRandom.hex, email: auth['info']['email'])
+         
             if @user.save
                 
             session[:id] = @user.id 
