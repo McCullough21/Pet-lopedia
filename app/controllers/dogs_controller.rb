@@ -17,9 +17,7 @@ class DogsController < ApplicationController
             @dogs = show_qualified(dog_set)
     end
     
-    def show
-        @dog = Dog.find(params[:id])
-    end
+    
 
     def new
         if params[:user_id]
