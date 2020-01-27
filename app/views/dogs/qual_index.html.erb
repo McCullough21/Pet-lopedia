@@ -3,15 +3,8 @@
 <h4><%= link_to "Back to dogs from all owners", breed_dogs_path%></h4>
 <br>
 
-<%@dogs.each do |dog|%>
+<%= render :collection => @dogs, :partial => 'dogs/dog_index', :as => :dog %>
 
-    <h3>Owner: <%=dog.user.username%></h3>
-    <h4>Qualification: <%=dog.user.qualification%></h4>
-    <li>Name:  <%= dog.name %></li>
-    <li>Age: <%= dog.age %></li>
-    <li>Description: <%= dog.description%></li>
-    <li>Breed: <%= dog.breed.name %></li>
-<% end %>
 
 
 <br>
