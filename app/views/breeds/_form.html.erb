@@ -1,0 +1,37 @@
+<h3>**Height in inches, weight in pounds**</h3>
+
+<%= form_for @breed do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br>
+    <%=f.label :female_height_min %>
+    <%=f.number_field :female_height_min %>
+    <br>
+    <%=f.label :female_height_max %>
+    <%=f.number_field :female_height_max %>
+    <br>
+    <%=f.label :female_weight_min %>
+    <%=f.number_field :female_weight_min %>
+    <br>
+    <%=f.label :female_weight_max %>
+    <%=f.number_field :female_weight_max %>
+    <br>
+    <%=f.label :male_height_min %>
+    <%=f.number_field :male_height_min %>
+    <br>
+    <%=f.label :male_height_max %>
+    <%=f.number_field :male_height_max %>
+    <br>
+    <%=f.label :male_weight_min %>
+    <%=f.number_field :male_weight_min %>
+    <br>
+    <%=f.label :male_weight_max %>
+    <%=f.number_field :male_weight_max %>
+    <br>
+    <%=f.label :description%>
+    <%=f.text_area :description%>
+    
+     
+    <%= f.submit "Submit" %>
+
+<% end %>
