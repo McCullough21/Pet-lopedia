@@ -66,12 +66,8 @@ class DogsController < ApplicationController
     end
 
     def show_qualified(dogs)
-        
-        dogs.reject do |dog|
-        
-          User.unqualified.include?(dog.user)
-        
-        end
-         
-     end
+      dogs.reject do |dog|
+        User.unqualified.include?(dog.user) 
+      end   
+    end
 end
