@@ -3,12 +3,7 @@
 <br>
 
 
-<%@breeds.each do |breed|%>
-    
-   <h2> <%=link_to breed.name, breed_path(breed)%></h2>
-    
-    
-<% end %>
+<%= render :collection => @breeds, :partial => 'breeds/breeds', :as => :breed %>
 
 <br>
 <br>
