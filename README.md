@@ -1,5 +1,5 @@
 # Pet-lopedia
-  Use Pet-lopedia as your go-to resources for information regarding dog breeds.  
+  Use Pet-lopedia as your go-to resource for information regarding dog breeds.  
 
 ## Installation
 To install a local version, fork, clone and run a rails server for a localhost version of the application.
