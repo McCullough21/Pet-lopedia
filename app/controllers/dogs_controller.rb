@@ -32,7 +32,7 @@ class DogsController < ApplicationController
         if @dog.save
            redirect_to user_path(@dog.user)
         else
-           redirect_to new_dog_path
+           render :new
         end
     end
 
