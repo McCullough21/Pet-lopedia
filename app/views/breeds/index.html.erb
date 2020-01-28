@@ -6,6 +6,10 @@
 <%= render :collection => @breeds, :partial => 'breeds/breeds', :as => :breed %>
 
 <br>
+
+<% if current_user.admin? %>
+<%= link_to "Add new breed", new_breed_path%>
+<% end %>
 <br>
 
 <%= link_to 'Logout', logout_path%>

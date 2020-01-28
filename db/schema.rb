@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_200424) do
+ActiveRecord::Schema.define(version: 2020_01_28_135606) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_200424) do
     t.string "qualification"
     t.string "email"
     t.string "uid"
+    t.boolean "admin"
   end
 
 end
