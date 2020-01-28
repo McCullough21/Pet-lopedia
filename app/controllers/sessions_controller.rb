@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         
      
        if
+        
          @user = User.find_by(email: auth['info']['email']) 
            
           
