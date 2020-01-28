@@ -22,7 +22,7 @@ class UsersController < ApplicationController
           session[:id] = @user.id
           redirect_to user_path(@user)
         else
-          redirect_to '/'
+          redirect_to '/', alert: "Login failed, incorrect Username or Password"
         end    
     end
 

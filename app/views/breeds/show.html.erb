@@ -16,7 +16,10 @@
 
     <%=link_to "See all #{@breed.name}'s ", breed_dogs_path(@breed)%>
     <br>
+    <% if current_user.admin? %>
     <%=link_to "Edit", edit_breed_path(@breed)%>
+    <% end %>
+    
 
 <br>
 <br>
