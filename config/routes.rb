@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :dogs, only: [:create, :show, :edit, :update]
   
   resources :breeds, only: [:index] do
-      resources :dogs, only: [:index, :show]
+      resources :dogs, only: [:index]
   end
   resources :users do
     resources :dogs, only: [:new]
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'breeds/:breed_id/qual_index' => "dogs#qual_index", as: :qual_index
   post 'login' => "users#login"
   get 'signup' => "users#new"
-  get 'edit_profile' => "users#edit"
   get 'logout' => 'users#logout'
   get 'delete/:id' => 'dogs#destroy', as: :delete
   get '/auth/facebook/callback' => 'sessions#new'
