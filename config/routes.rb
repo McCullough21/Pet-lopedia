@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'users#home'
 
-  resources :dogs, only: [:create, :show, :edit, :update, :destroy]
+  resources :dogs, only: [:create, :show, :edit, :update]
   
   resources :breeds, only: [:index] do
       resources :dogs, only: [:index, :show]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'signup' => "users#new"
   get 'edit_profile' => "users#edit"
   get 'logout' => 'users#logout'
-
+  get 'delete/:id' => 'dogs#destroy', as: :delete
   get '/auth/facebook/callback' => 'sessions#new'
   post 'session/create' => 'sessions#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
